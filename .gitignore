@@ -1,0 +1,8 @@
+# Local install artifacts
+node_modules/
+.pnpm-store/
+*.log
+
+# OS noise
+.DS_Store
+Thumbs.db

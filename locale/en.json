@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Conversation Mode",
+    "description": "A per-session chat-first mode: conversational replies, a conversation persona, and read-only tools. Toggle it from the composer Chat chip or with /conversation."
+  }
+}

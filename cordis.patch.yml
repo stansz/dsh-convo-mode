@@ -1,0 +1,22 @@
+# Bundle patch for dsh-convo-mode.
+#
+# One inserted row mounts this package's Host half, which contributes:
+#
+#   ctx.sessionProjections.register() -> the `conversation` projection (durable mode state)
+#   ctx.systemPrompt.section()        -> the `conversation:policy` guidance while active
+#   ctx.tools.restrict() per agent    -> read-only tool policy while active
+#   ctx.commands.register()           -> the /conversation command
+#
+# The id is unique to this bundle, so no shipped row is overridden. Delete this entry
+# to remove the mode.
+#
+# Optional config, overridden from the profile patch by row id — a patch entry
+# with `id: dsh-convo-mode` and a `config:` block replaces the whole config:
+#
+#   section:       model-facing guidance used while the mode is active
+#   tools:         'readonly' (default) or 'unrestricted'
+#   allow:         tool names kept callable while active (unknown names are skipped)
+#   defaultActive: true to start every session in conversation mode (default false)
+- insert:
+    - id: dsh-convo-mode
+      name: 'dsh-convo-mode'
